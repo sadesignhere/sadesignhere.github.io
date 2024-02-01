@@ -109,7 +109,7 @@
                                 Chat</span>
                         </li>
                     </ul>
-                    <button class="bg-[#1D3566] p-3 text-white" onclick="buyNow('Paket Novice', 100000)">Buy
+                    <button class="bg-[#1D3566] p-3 text-white" onclick="buyNow('Paket Novice', 100000, 12)">Buy
                         Now</button>
                 </div>
             </div>
@@ -150,7 +150,7 @@
                                 Chat</span>
                         </li>
                     </ul>
-                    <button class="bg-[#1D3566] p-3 text-white" onclick="buyNow('Paket Expert', 350000)">Buy
+                    <button class="bg-[#1D3566] p-3 text-white" onclick="buyNow('Paket Expert', 350000, 12)">Buy
                         Now</button>
                 </div>
             </div>
@@ -190,7 +190,7 @@
                             <span class="text-base font-normal leading-tight text-white ms-3">Live Chat</span>
                         </li>
                     </ul>
-                    <button class="bg-[#1D3566] p-3 text-white" onclick="buyNow('Paket Master', 559000)">Buy
+                    <button class="bg-[#1D3566] p-3 text-white" onclick="buyNow('Paket Master', 559000, 12)">Buy
                         Now</button>
                 </div>
             </div>
@@ -233,16 +233,19 @@
             }).format(amount);
         }
 
-        function buyNow(product, price) {
+        function buyNow(product, price, multiplier) {
+            // Mengalikan harga dengan multiplier (12 atau 1 tahun)
+            const discountedPrice = price * multiplier;
+
             const item = {
                 product,
-                price,
+                price: discountedPrice,
                 quantity: 1
             };
 
             cart.push(item);
 
-            const message = `${product} - Quantity: 1\nPrice: ${formatRupiah(price)}`;
+            const message = `${product} - Quantity: 1\nPrice: ${formatRupiah(discountedPrice)}`;
             const whatsappLink = `https://wa.me/6283805269250?text=${encodeURIComponent(message)}`;
 
             window.open(whatsappLink, '_blank');
