@@ -98,7 +98,8 @@
                                 Chat</span>
                         </li>
                     </ul>
-                    <button class="bg-[#1D3566] p-3 text-white" onclick="addToCart('Paket Novice', 100000)">Buy Now</button>
+                    <button class="bg-[#1D3566] p-3 text-white" onclick="addToCart('Paket Novice', 100000)">Buy
+                        Now</button>
                 </div>
             </div>
         </div>
@@ -138,7 +139,8 @@
                                 Chat</span>
                         </li>
                     </ul>
-                    <button class="bg-[#1D3566] p-3 text-white" onclick="addToCart('Paket Expert', 350000)">Buy Now</button>
+                    <button class="bg-[#1D3566] p-3 text-white" onclick="addToCart('Paket Expert', 350000)">Buy
+                        Now</button>
                 </div>
             </div>
         </div>
@@ -177,7 +179,8 @@
                             <span class="text-base font-normal leading-tight text-white ms-3">Live Chat</span>
                         </li>
                     </ul>
-                    <button class="bg-[#1D3566] p-3 text-white" onclick="addToCart('Paket Master', 559000)">Buy Now</button>
+                    <button class="bg-[#1D3566] p-3 text-white" onclick="addToCart('Paket Master', 559000)">Buy
+                        Now</button>
                 </div>
             </div>
         </div>
@@ -210,7 +213,6 @@
 
     <script>
         let cart = [];
-        let total = 0;
 
         function formatRupiah(amount) {
             return new Intl.NumberFormat("id-ID", {
@@ -221,27 +223,21 @@
         }
 
         function addToCart(product, price) {
-
-
-            cart.push({
+            const item = {
                 product,
                 price,
                 quantity: 1
-            });
-            total += price;
+            };
 
-            updateCart();
+            cart.push(item);
 
-            const message = `${product} - Quantity: 1\nTotal: ${formatRupiah(total)}`;
+            const message = `${product} - Quantity: 1\nPrice: ${formatRupiah(price)}`;
             const whatsappLink = `https://wa.me/6283805269250?text=${encodeURIComponent(message)}`;
-            
+
             window.open(whatsappLink, '_blank');
         }
-
-        function updateCart() {
-
-        }
     </script>
+
 </body>
 
 </html>
