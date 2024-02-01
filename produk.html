@@ -98,7 +98,7 @@
                                 Chat</span>
                         </li>
                     </ul>
-                    <button class="bg-[#1D3566] p-3 text-white" onclick="addToCart('Paket Novice', 100000)">Buy
+                    <button class="bg-[#1D3566] p-3 text-white" onclick="buyNow('Paket Novice', 100000)">Buy
                         Now</button>
                 </div>
             </div>
@@ -139,7 +139,7 @@
                                 Chat</span>
                         </li>
                     </ul>
-                    <button class="bg-[#1D3566] p-3 text-white" onclick="addToCart('Paket Expert', 350000)">Buy
+                    <button class="bg-[#1D3566] p-3 text-white" onclick="buyNow('Paket Expert', 350000)">Buy
                         Now</button>
                 </div>
             </div>
@@ -179,7 +179,7 @@
                             <span class="text-base font-normal leading-tight text-white ms-3">Live Chat</span>
                         </li>
                     </ul>
-                    <button class="bg-[#1D3566] p-3 text-white" onclick="addToCart('Paket Master', 559000)">Buy
+                    <button class="bg-[#1D3566] p-3 text-white" onclick="buyNow('Paket Master', 559000)">Buy
                         Now</button>
                 </div>
             </div>
@@ -222,7 +222,7 @@
             }).format(amount);
         }
 
-        function addToCart(product, price) {
+        function buyNow(product, price) {
             const item = {
                 product,
                 price,
